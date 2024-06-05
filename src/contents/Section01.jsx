@@ -41,7 +41,7 @@ const ContsWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: ${({ mobile }) => (mobile ? '8rem' : '10rem')};
+  gap: ${({ mobile }) => (mobile ? '8rem' : '6rem')};
 `;
 const Span = styled.span`
     color: var(--Dark-Blue-600);
@@ -77,7 +77,7 @@ const Section01 = () => {
   const isTablet = useMediaQuery('(max-width: 1024px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
 
-  const openURl = () => { window.open('https://www.google.com', '_blank'); };
+  const openURl = () => { window.open('https://walla.my/survey/3n0vuZDRWDEatSBD7ZMo', '_blank'); };
 
   return (
     <SectionWrapper tablet={isTablet} mobile={isMobile}>

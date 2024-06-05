@@ -22,6 +22,10 @@ const StyledButton = styled.button.attrs(props => ({
     &:active {
         transform: translateY(3px);  cursor: pointer;
     }
+    @media (max-width: 768px) {  // mobile
+        width: 18rem;
+        padding: .8rem 1.6rem;
+  }
 `;
 
 const BtnUrl = ({ children, onClick, backgroundColor, color}) => {
