@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const useScrollAnimation = (keyframes, threshold = 0.1) => {
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  const ref = useRef(isMobile ? null : document.createElement('div'));
+  const ref = useRef(null);
   const [animationStarted, setAnimationStarted] = useState(false);
 
   useEffect(() => {
