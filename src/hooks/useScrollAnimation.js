@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { css } from 'styled-components'; // css를 임포트합니다.
 
 const useScrollAnimation = (keyframes, threshold = 0.1) => {
-  const ref = useRef(null);
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const ref = useRef(isMobile ? null : document.createElement('div'));
   const [animationStarted, setAnimationStarted] = useState(false);
 
   useEffect(() => {

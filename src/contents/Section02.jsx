@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 import useMediaQuery from '../hooks/useMediaQuery';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+
 import CardLarge from '../components/cards/CardLarge';
 import CardSmall from '../components/cards/CardSmall.jsx';
 import TypoH2 from '../components/typographys/TypoH2';
@@ -37,6 +38,7 @@ const SectionWrapper = styled.section`
   justify-content: center;
   align-items: center;
   gap: 10rem;
+  margin-bottom: 10rem;
 `;
 const ContsWrapper = styled.section`
   width: 100%;
@@ -118,15 +120,13 @@ const IconWrapper = styled.img`
 `
 
 const Section02 = () => {
+  const sectionRef = useScrollAnimation(slideUpAnimation);
   const isTablet = useMediaQuery('(max-width: 1024px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const sectionRef = useRef(null);
-
-  useScrollAnimation(isMobile ? null : slideUpAnimation, sectionRef);
 
   return (
-    <SectionWrapper ref={!isMobile ? sectionRef : null} tablet={isTablet} mobile={isMobile}>
-      <ContsWrapper>
+    <SectionWrapper tablet={isTablet} mobile={isMobile}>
+      <ContsWrapper ref={sectionRef}>
         <TitleGroupWrapper>
           {isMobile ? (
             <MainTitleWrapper>

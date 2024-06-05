@@ -98,7 +98,7 @@ const ContsRightWrapper = styled.img`
   height: auto;
   object-fit: contain;
   @media (max-width: 1024px) {  // tablet 이하 
-    width: 50%;
+    width: 40%;
     height: auto;
     object-fit: contain;
   }
@@ -106,15 +106,13 @@ const ContsRightWrapper = styled.img`
 
 
 const Section03 = () => {
+  const sectionRef = useScrollAnimation(slideUpAnimation);
   const isTablet = useMediaQuery('(max-width: 1024px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const sectionRef = useRef(null);
-
-  useScrollAnimation(isMobile ? null : slideUpAnimation, sectionRef);
 
   return (
-    <SectionWrapper ref={!isMobile ? sectionRef : null} tablet={isTablet} mobile={isMobile}>
-      <ContsWrapper>
+    <SectionWrapper tablet={isTablet} mobile={isMobile}>
+      <ContsWrapper ref={sectionRef}>
         <ContsLeftWrapper>
           {isMobile ? (
             <MainTitleWrapper>

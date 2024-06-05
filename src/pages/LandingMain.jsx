@@ -13,7 +13,6 @@ const LandingWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
 `;
 
 const LandingMain = () => {

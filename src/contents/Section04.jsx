@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 import useMediaQuery from '../hooks/useMediaQuery';
-import useScrollAnimation from '../hooks/useScrollAnimation';
 
 import CardFreeTrial from '../components/cards/CardFreeTrial';
 import TypoH2 from '../components/typographys/TypoH2';
@@ -53,14 +52,13 @@ const Btn = styled.div`
 `;
 
 const Section04 = () => {
-  const sectionRef = useScrollAnimation(slideUpAnimation);
   const isTablet = useMediaQuery('(max-width: 1024px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   const openURl = () => {  window.open('https://walla.my/survey/3n0vuZDRWDEatSBD7ZMo', '_blank');  };
 
   return (
-    <SectionWrapper ref={sectionRef}>
+    <SectionWrapper >
       <CardFreeTrial>
         {isMobile ? (
           <TypoH6 color='var(--White)' fontWeight='100'>Free-trial</TypoH6>
